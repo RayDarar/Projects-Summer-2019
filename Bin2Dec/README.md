@@ -1,6 +1,11 @@
 # Bin2Dec
 
-<img src="https://img.shields.io/badge/gui-%20decided-green.svg">
+<style>
+    img {
+        display: inline;
+    }
+</style>
+<img src="https://img.shields.io/badge/gui-%20JavaFX-green.svg">
 <img src="https://img.shields.io/badge/language-Java-green.svg">
 
 Binary to decimal converter :two: -> :one::zero:
