@@ -8,6 +8,3 @@ Binary to decimal converter :two: -> :one::zero:
 ## Tools
 Programming language - Java
 Graphical Interface using JavaFX
-
-## Changelog
-- Adding first source files
