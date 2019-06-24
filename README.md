@@ -7,7 +7,7 @@ Two students decided to improve their programming skills by doing cool things !
 Most of the projects ideas came from [this repository](https://github.com/florinpop17/app-ideas) and one is updating [this repo](https://github.com/RayDarar/Labirint).
 
 ## Projects 📑
-- [ ] Bin2Dec
+- [x] Bin2Dec
 
 ## Contributors
 - @RayDarar (Ansar) :star:

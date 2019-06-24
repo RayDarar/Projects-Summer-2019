@@ -1,4 +1,4 @@
-package app;
+package Easy;
 
 import static javafx.scene.layout.VBox.setMargin;
 
@@ -14,7 +14,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class Main extends Application {
+public class Bin2Dec extends Application {
     private TextField bin = new TextField();
     private TextField dec = new TextField();
     private Button toDec = new Button("===>");
