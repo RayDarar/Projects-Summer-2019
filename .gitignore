@@ -9,3 +9,6 @@ idea/
 
 # Binnary output
 bin/
+
+# Main files
+src/Main.java

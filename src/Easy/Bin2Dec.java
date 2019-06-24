@@ -1,5 +1,10 @@
 package Easy;
 
+/**
+ * Bin2Dec project
+ * 
+ */
+
 import static javafx.scene.layout.VBox.setMargin;
 
 import javafx.application.Application;
@@ -60,25 +65,15 @@ public class Bin2Dec extends Application {
         primaryStage.show();
     }
 
-    public static int convertToDec(int temp) {
-        while (temp != 0) {
-            int rem = temp % 10;
-            decres = (int) (decres + (rem * Math.pow(2, pow)));
-            pow++;
-            temp /= 10;
-        }
-        return decres;
-    }
-
-    public static int convertToDecInbuilt(String bin) {
+    private static int convertToDecInbuilt(String bin) {
         return Integer.parseInt(bin, 2);
     }
 
-    public static String convertToBin(int num) {
+    private static String convertToBin(int num) {
         return binRes + Integer.toBinaryString(num);
     }
 
-    public static void main(String[] args) {
+    public static void execute(String[] args) {
         launch(args);
     }
 }
