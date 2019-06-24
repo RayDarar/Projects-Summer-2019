@@ -17,7 +17,7 @@ public class BRP extends Application {
         stage.show();
     }
 
-    public static void Execute(String[] args) {
+    public static void execute(String[] args) {
         launch(args);
     }
 }
