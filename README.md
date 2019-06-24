@@ -19,7 +19,7 @@ In case it's Java, execute project from your main using 'Execute' method, exampl
 import Easy.Bin2Dec;
 
 public static void main(String[] args) {
-    Bin2Dec.Execute(args);
+    Bin2Dec.execute(args);
 }
 ```
 
