@@ -24,6 +24,7 @@ public class BRP extends Application {
      * @param value   - By what value change element's border
      */
     private void changeBorder(Node element, BorderSide side, int value) {
+        String borderValue = value + "";
         String style = element.getStyle();
         if (!style.contains("-fx-border-radius"))
             style += "-fx-border-radius: 0 0 0 0;";
@@ -42,32 +43,28 @@ public class BRP extends Application {
 
         switch (side) {
         case all:
-            for (int i = 0; i < 4; borderValues[i] = value + "", i++)
+            for (int i = 0; i < 4; borderValues[i] = borderValue, i++)
                 ;
             break;
         case lowerLeft:
-            borderValues[3] = value + "";
+            borderValues[3] = borderValue;
             break;
         case lowerRight:
-            borderValues[2] = value + "";
+            borderValues[2] = borderValue;
             break;
         case upperLeft:
-            borderValues[0] = value + "";
+            borderValues[0] = borderValue;
             break;
         case upperRight:
-            borderValues[1] = value + "";
+            borderValues[1] = borderValue;
             break;
         }
 
         // Replacing new styles
-        style = style.replaceAll(border,
-                String.format("-fx-border-radius: %d %d %d %d;", Integer.parseInt(borderValues[0]),
-                        Integer.parseInt(borderValues[1]), Integer.parseInt(borderValues[2]),
-                        Integer.parseInt(borderValues[3])));
-        style = style.replaceAll(background,
-                String.format("-fx-background-radius: %d %d %d %d;", Integer.parseInt(borderValues[0]),
-                        Integer.parseInt(borderValues[1]), Integer.parseInt(borderValues[2]),
-                        Integer.parseInt(borderValues[3])));
+        style = style.replaceAll(border, String.format("-fx-border-radius: %s %s %s %s;", borderValues[0],
+                borderValues[1], borderValues[2], borderValues[3]));
+        style = style.replaceAll(background, String.format("-fx-background-radius: %s %s %s %s;", borderValues[0],
+                borderValues[1], borderValues[2], borderValues[3]));
 
         element.setStyle(style);
     }
@@ -79,8 +76,6 @@ public class BRP extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         var root = new Group();
-
-        
 
         stage.setScene(new Scene(root, 500, 500));
         stage.setTitle("Border-radius previewer");
