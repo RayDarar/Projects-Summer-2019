@@ -8,7 +8,9 @@ Most of the projects ideas came from [this repository](https://github.com/florin
 
 ## Projects 📑
 - [x] [Bin2Dec](src/Easy/Bin2Dec.java)
-- [ ] [Border-radius Previewer](src/Easy/BRP.java)
+- [x] [Border-radius Previewer](src/Easy/BRP.java)
+- [ ] [Calculator](src/Easy/Calculator/Calculator.java)
+
 
 ## Installation
 1) Choose the project
@@ -42,6 +44,16 @@ public static void main(String[] args) {
         <td>
             <ul>
                 <li>Java/JavaFX</li>
+                <li>JavaFX & CSS</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>Calculator</td>
+        <td>
+            <ul>
+                <li>Java/JavaFX</li>
+                <li>Dijkstra's Two Stack algorithm</li>
             </ul>
         </td>
     </tr>
