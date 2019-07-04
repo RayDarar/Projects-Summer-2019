@@ -35,7 +35,8 @@ public static void main(String[] args) {
         <td>Bin2Dec</td>
         <td>
             <ul>
-                <li>Java/JavaFX</li>
+                <li>Java 8 or higher</li>
+                <li>JavaFX</li>
             </ul>
         </td>
     </tr>
@@ -43,8 +44,8 @@ public static void main(String[] args) {
         <td>Border-radius Previewer</td>
         <td>
             <ul>
-                <li>Java/JavaFX</li>
-                <li>JavaFX & CSS</li>
+                <li>Java 8 or higher</li>
+                <li>JavaFX && CSS</li>
             </ul>
         </td>
     </tr>
@@ -52,8 +53,8 @@ public static void main(String[] args) {
         <td>Calculator</td>
         <td>
             <ul>
-                <li>Java/JavaFX</li>
-                <li>Dijkstra's Two Stack algorithm</li>
+                <li>Java 8 or higher</li>
+                <li>JavaFX</li>
             </ul>
         </td>
     </tr>

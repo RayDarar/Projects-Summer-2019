@@ -1,18 +1,13 @@
 package Easy;
+
 import javafx.application.Application;
-import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 /**
@@ -26,7 +21,7 @@ public class BRP extends Application {
     }
 
     /**
-     * My back-end method, changeBorder
+     * Back-end method, changeBorder
      *
      * @param element - JavaFX node element, which we're going to change
      * @param side    - Specifies, which side to change
@@ -78,10 +73,6 @@ public class BRP extends Application {
         element.setStyle(style);
     }
 
-    /**
-     * !!! Rewrite start method Here goes your front-end
-     *
-     */
     @Override
     public void start(Stage stage) throws Exception {
         GridPane pane = new GridPane();
@@ -94,7 +85,7 @@ public class BRP extends Application {
         Button element = new Button();
         element.setMinHeight(100);
         element.setMinWidth(100);
-        //element.setStyle("-fx-background-color : violet");
+        element.setStyle("-fx-background-color : violet;"); // Semicolon after violet
 
         GridPane.setConstraints(element,2,0);
         GridPane.setColumnSpan(element,3);
@@ -173,4 +164,3 @@ public class BRP extends Application {
         launch(args);
     }
 }
-
