@@ -5,7 +5,7 @@
 .project
 
 # IntelIJ working folders
-idea/
+.idea/
 
 # Binnary output
 bin/
