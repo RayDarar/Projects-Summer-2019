@@ -1,6 +1,9 @@
 package Easy.Calculator;
 
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
@@ -16,9 +19,9 @@ public class Calculator extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("res/sample.fxml"));
         stage.setTitle("Calculator");
-	stage.setScene(new Scene(root, 240, 305));
+        stage.setScene(new Scene(root, 240, 305));
         stage.show();
     }
 }
