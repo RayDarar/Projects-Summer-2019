@@ -6,6 +6,8 @@
 
 # IntelIJ working folders
 .idea/
+*.iml
+stale_outputs_checked
 
 # Binnary output
 bin/
