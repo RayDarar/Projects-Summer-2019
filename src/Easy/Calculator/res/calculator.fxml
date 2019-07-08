@@ -3,13 +3,15 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="paneVbox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="303.0" prefWidth="240.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
+<VBox fx:id="paneVbox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="303.0" prefWidth="240.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Calculator.Controller">
    <children>
       <TextField fx:id="historyText" style="-fx-background-color: DEDACA;">
          <VBox.margin>
@@ -106,13 +108,9 @@
                <font>
                   <Font name="System Bold" size="18.0" />
                </font></Button>
-            <Button id="backBut" fx:id="backBut" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #DEDACA;" text="&lt;-">
+            <Button id="backBut" fx:id="backBut" mnemonicParsing="false" prefHeight="40.0" prefWidth="26.0" style="-fx-background-color: #DEDACA;">
                <font>
-                  <Font name="System Bold" size="18.0" />
-               </font></Button>
-            <Button id="clearAllBut" fx:id="clearAllBut" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #DEDACA;" text="AC" GridPane.columnIndex="1">
-               <font>
-                  <Font size="18.0" />
+                  <Font name="System Bold" size="14.0" />
                </font></Button>
             <Button id="clearBut" fx:id="clearBut" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #B766E8;" text="C" GridPane.columnIndex="2">
                <font>
@@ -122,6 +120,35 @@
                <font>
                   <Font name="System Bold" size="18.0" />
                </font></Button>
+            <Button fx:id="openBracketBut" mnemonicParsing="false" prefHeight="40.0" prefWidth="26.0" style="-fx-background-color: #DEDACA;" text="(" GridPane.columnIndex="1">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="closeBracketBut" mnemonicParsing="false" prefHeight="40.0" prefWidth="32.0" style="-fx-background-color: #DEDACA;" text=")" GridPane.columnIndex="1">
+               <GridPane.margin>
+                  <Insets left="28.0" />
+               </GridPane.margin>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="historyBut" mnemonicParsing="false" onAction="#toHistory" prefHeight="40.0" prefWidth="27.0" style="-fx-background-color: B766E8;" text="H">
+               <GridPane.margin>
+                  <Insets left="28.0" />
+               </GridPane.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <ImageView fx:id="backLogo" fitHeight="30.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@BackLogo.png" />
+               </image>
+            </ImageView>
          </children>
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="2.0" />
