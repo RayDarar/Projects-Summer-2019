@@ -1,4 +1,4 @@
-package Calculator;
+package Easy.Calculator;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,24 +9,21 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-
 public class Controller {
     @FXML
     private Button historyBut;
 
-
-
     @FXML
-    void toHistory(){
+    void toHistory() {
         historyBut.setOnAction(event -> {
             historyBut.getScene().getWindow().hide();
 
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("/Calculator/history.fxml"));
+            loader.setLocation(getClass().getResource("res/history.fxml"));
 
-            try{
+            try {
                 loader.load();
-            }catch (IOException e){
+            } catch (IOException e) {
                 e.printStackTrace();
             }
 
@@ -37,6 +34,5 @@ public class Controller {
 
         });
     }
-
 
 }

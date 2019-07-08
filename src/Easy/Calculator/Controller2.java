@@ -1,4 +1,4 @@
-package Calculator;
+package Easy.Calculator;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,16 +14,16 @@ public class Controller2 {
     private Button backToCalcBut;
 
     @FXML
-    void toCalc(){
+    void toCalc() {
         backToCalcBut.setOnAction(event -> {
             backToCalcBut.getScene().getWindow().hide();
 
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("/Calculator/calculator.fxml"));
+            loader.setLocation(getClass().getResource("res/calculator.fxml"));
 
-            try{
+            try {
                 loader.load();
-            }catch (IOException e){
+            } catch (IOException e) {
                 e.printStackTrace();
             }
 
