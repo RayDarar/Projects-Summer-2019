@@ -1,4 +1,4 @@
-package Easy.Calculator;
+package Easy.Calculator.controllers;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class Controller {
+public class CalculatorController {
     @FXML
     private Button historyBut;
 
