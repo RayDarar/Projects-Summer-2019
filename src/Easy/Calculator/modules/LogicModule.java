@@ -17,4 +17,9 @@ public class LogicModule {
 
         return logic;
     }
+
+    public double calculate(String expression) {
+        
+        return 0;
+    }
 }
