@@ -1,5 +1,6 @@
 package Easy.Calculator.controllers;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
@@ -12,10 +13,7 @@ public class CalculatorController {
     private Button historyBut;
 
     @FXML
-    void toHistory() {
-        historyBut.setOnAction(event -> {
-            data.showHistory();
-        });
+    void toHistory(ActionEvent event) {
+        data.showHistory();
     }
-
 }
