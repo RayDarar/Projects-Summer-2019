@@ -20,6 +20,7 @@ public class CalculatorController {
     private Button historyBut;
 
     @FXML
+
     private Button backBut;
     @FXML
     private Button clearBut;
@@ -72,5 +73,4 @@ public class CalculatorController {
             data.showHistory();
         });
     }
-
 }
