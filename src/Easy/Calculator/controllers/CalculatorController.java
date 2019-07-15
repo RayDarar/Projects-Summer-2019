@@ -30,7 +30,12 @@ public class CalculatorController {
     public boolean operatorWaiting = false;
 
     public void add(String value) {
-        
+
+    }
+
+    public void init() {
+        mainText.setEditable(false);
+        mainHistoryText.setEditable(false);
     }
 
     @FXML

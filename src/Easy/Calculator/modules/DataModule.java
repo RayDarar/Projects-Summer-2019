@@ -38,9 +38,13 @@ public class DataModule {
             calculator.setTitle("Calculator");
             calculator.setScene(new Scene(calculatorLoader.load(), 240, 305));
             CalculatorController calculatorController = calculatorLoader.getController();
+            calculatorController.init();
 
             calculator.getScene().addEventHandler(KeyEvent.KEY_PRESSED, key -> {
-                System.out.println(key);
+                char value = key.getText().charAt(0);
+                if (Character.isDigit(value)) {
+
+                }
             });
 
             history = new Stage();
