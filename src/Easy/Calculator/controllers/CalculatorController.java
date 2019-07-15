@@ -26,10 +26,10 @@ public class CalculatorController {
     @FXML
     private TextField mainHistoryText;
 
-    private boolean numberWaiting = true;
-    private boolean operatorWaiting = false;
+    public boolean numberWaiting = true;
+    public boolean operatorWaiting = false;
 
-    private void add(String value) {
+    public void add(String value) {
         
     }
 

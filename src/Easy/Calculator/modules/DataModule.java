@@ -3,9 +3,11 @@ package Easy.Calculator.modules;
 import java.io.IOException;
 
 import Easy.Calculator.Calculator;
+import Easy.Calculator.controllers.CalculatorController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
 /**
@@ -31,10 +33,15 @@ public class DataModule {
 
     public void loadStages(Stage parentStage) throws Exception {
         if (!stagesLoaded) {
+            FXMLLoader calculatorLoader = new FXMLLoader(Calculator.class.getResource("res/calculator.fxml"));
             calculator = parentStage;
             calculator.setTitle("Calculator");
-            calculator.setScene(
-                    new Scene(FXMLLoader.load(Calculator.class.getResource("res/calculator.fxml")), 240, 305));
+            calculator.setScene(new Scene(calculatorLoader.load(), 240, 305));
+            CalculatorController calculatorController = calculatorLoader.getController();
+
+            calculator.getScene().addEventHandler(KeyEvent.KEY_PRESSED, key -> {
+                System.out.println(key);
+            });
 
             history = new Stage();
             history.setScene(new Scene(FXMLLoader.load(Calculator.class.getResource("res/history.fxml")), 240, 305));
