@@ -26,11 +26,17 @@ public class CalculatorController {
     @FXML
     private TextField mainHistoryText;
 
-    public void setText(TextField target, String value) {
-        target.setText(target.getText() + value);
+    private boolean canWrite = true;
 
-        if (target.getText().length() > 8)
-            mainHistoryText.setText("ERR");
+    public void setText(TextField target, String value) {
+        if (canWrite) {
+            target.setText(target.getText() + value);
+    
+            if (target.getText().length() > 8) {
+                mainHistoryText.setText("ERR");
+                canWrite = false;
+            }
+        }
     }
 
     @FXML
@@ -49,6 +55,7 @@ public class CalculatorController {
     private void clear(ActionEvent event) {
         mainText.clear();
         mainHistoryText.clear();
+        canWrite = true;
     }
 
     @FXML
