@@ -41,7 +41,7 @@ public class LogicModule {
      * After calculating the expression, we should add it to history
      * 
      */
-    public double calculate(String expression) {
+    public double calculate(String expression) throws Exception {
         double result = 0;
 
         // Implementation goes here...
