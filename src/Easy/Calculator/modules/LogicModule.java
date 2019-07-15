@@ -36,6 +36,11 @@ public class LogicModule {
     private LinkedList<HistoryItem> history;
 
     // Other logic
+
+    /**
+     * After calculating the expression, we should add it to history
+     * 
+     */
     public double calculate(String expression) {
         return 0;
     }

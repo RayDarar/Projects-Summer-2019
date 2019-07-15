@@ -26,42 +26,24 @@ public class CalculatorController {
     @FXML
     private TextField mainHistoryText;
 
-    private boolean canWrite = true;
-
-    public void setText(TextField target, String value) {
-        if (canWrite) {
-            target.setText(target.getText() + value);
-    
-            if (target.getText().length() > 8) {
-                mainHistoryText.setText("ERR");
-                canWrite = false;
-            }
-        }
-    }
-
     @FXML
     private void processNumpad(ActionEvent event) {
-        setText(mainText, ((Button) event.getSource()).getText());
+
     }
 
     @FXML
     private void processOperation(ActionEvent event) {
-        setText(mainHistoryText, mainHistoryText.getText() + mainText.getText());
-        setText(mainHistoryText, mainHistoryText.getText() + ((Button) event.getSource()).getText());
-        mainText.clear();
+
     }
 
     @FXML
     private void clear(ActionEvent event) {
-        mainText.clear();
-        mainHistoryText.clear();
-        canWrite = true;
+
     }
 
     @FXML
     private void back(ActionEvent event) {
-        String value = mainText.getText();
-        setText(mainText, value.substring(0, value.length() - 1));
+
     }
 
     @FXML
