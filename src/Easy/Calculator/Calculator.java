@@ -27,6 +27,8 @@ public class Calculator extends Application {
         stage.setScene(new Scene(root, 240, 305));
         stage.show();
 
+        
+
         data.loadStages(stage); // Parent stage is actually a calculator
     }
 }
