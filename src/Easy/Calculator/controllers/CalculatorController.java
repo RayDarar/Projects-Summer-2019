@@ -26,6 +26,13 @@ public class CalculatorController {
     @FXML
     private TextField mainHistoryText;
 
+    private boolean numberWaiting = true;
+    private boolean operatorWaiting = false;
+
+    private void add(String expression) {
+        
+    }
+
     @FXML
     private void processNumpad(ActionEvent event) {
 

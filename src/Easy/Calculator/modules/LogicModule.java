@@ -42,7 +42,12 @@ public class LogicModule {
      * 
      */
     public double calculate(String expression) {
-        return 0;
+        double result = 0;
+
+        // Implementation goes here...
+
+        addToHistory(expression, result);
+        return result;
     }
 
     private void addToHistory(String expression, double result) {
