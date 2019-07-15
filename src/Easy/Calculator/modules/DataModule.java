@@ -29,21 +29,16 @@ public class DataModule {
     private Stage calculator; // Also a parent stage
     private Stage history;
 
-    public void loadStages(Stage parentStage) {
+    public void loadStages(Stage parentStage) throws Exception {
         if (!stagesLoaded) {
             calculator = parentStage;
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Calculator.class.getResource("res/history.fxml"));
+            calculator.setTitle("Calculator");
+            calculator.setScene(
+                    new Scene(FXMLLoader.load(Calculator.class.getResource("res/calculator.fxml")), 240, 305));
 
-            try {
-                loader.load();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-            Parent root = loader.getRoot();
             history = new Stage();
-            history.setScene(new Scene(root));
+            history.setScene(new Scene(FXMLLoader.load(Calculator.class.getResource("res/history.fxml")), 240, 305));
+            history.setTitle("History");
             stagesLoaded = true;
         }
     }
