@@ -96,7 +96,7 @@ public class CalculatorController {
     }
 
     @FXML
-    void toHistory(ActionEvent event) {
+    public void toHistory(ActionEvent event) {
         data.showHistory();
     }
 }

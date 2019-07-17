@@ -41,20 +41,34 @@ public class DataModule {
             CalculatorController calculatorController = calculatorLoader.getController();
             calculatorController.init();
 
-            calculator.getScene().addEventHandler(KeyEvent.KEY_PRESSED, key -> {
-                if (key.getText().equals("")) {
-
-                } else {
-                    Character value = key.getText().charAt(0);
-                    ArrayList<Character> inputs = new ArrayList<>();
-                    inputs.add('+');
-                    inputs.add('-');
-                    inputs.add('*');
-                    inputs.add('/');
-                    if (Character.isDigit(value) || value.equals('(') || value.equals(')'))
-                        calculatorController.processNumpad(value + "");
-                    else if (inputs.contains(value))
-                        calculatorController.processOperation(value + "");
+            calculator.getScene().addEventHandler(KeyEvent.KEY_TYPED, key -> { // Operators/digits
+                Character value = key.getCharacter().charAt(0);
+                ArrayList<Character> inputs = new ArrayList<>();
+                inputs.add('+');
+                inputs.add('-');
+                inputs.add('*');
+                inputs.add('/');
+                if (Character.isDigit(value) || value.equals('(') || value.equals(')'))
+                    calculatorController.processNumpad(value + "");
+                else if (inputs.contains(value))
+                    calculatorController.processOperation(value + "");
+            });
+            calculator.getScene().addEventHandler(KeyEvent.KEY_PRESSED, key -> { // Special keys, like you :3
+                switch (key.getCode()) {
+                case BACK_SPACE:
+                    calculatorController.back();
+                    break;
+                case C:
+                    calculatorController.clear();
+                    break;
+                case H:
+                    calculatorController.toHistory(null);
+                    break;
+                case ENTER:
+                    calculatorController.calculate();
+                    break;
+                default:
+                    break;
                 }
             });
 
