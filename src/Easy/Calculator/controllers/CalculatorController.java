@@ -33,6 +33,7 @@ public class CalculatorController {
 
     private void setText(TextField target, String text) {
         target.setText(text);
+        data.loseFocus(); // Losing focus from buttons if we're clicking
         // Some logic to control font depending on text size
     }
 

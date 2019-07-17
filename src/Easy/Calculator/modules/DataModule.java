@@ -79,6 +79,10 @@ public class DataModule {
         }
     }
 
+    public void loseFocus() {
+        calculator.requestFocus();
+    }
+
     public void showCalculator() {
         if (stagesLoaded) {
             history.hide();
