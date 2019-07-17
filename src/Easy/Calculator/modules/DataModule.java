@@ -42,14 +42,19 @@ public class DataModule {
             calculatorController.init();
 
             calculator.getScene().addEventHandler(KeyEvent.KEY_PRESSED, key -> {
-                char value = key.getText().charAt(0);
-                ArrayList<Character> operators = new ArrayList<>();
-                operators.add('+');
-                operators.add('-');
-                operators.add('*');
-                operators.add('/');
-                if (Character.isDigit(value) || operators.contains(value)) {
+                if (key.getText().equals("")) {
 
+                } else {
+                    Character value = key.getText().charAt(0);
+                    ArrayList<Character> inputs = new ArrayList<>();
+                    inputs.add('+');
+                    inputs.add('-');
+                    inputs.add('*');
+                    inputs.add('/');
+                    if (Character.isDigit(value) || value.equals('(') || value.equals(')'))
+                        calculatorController.processNumpad(value + "");
+                    else if (inputs.contains(value))
+                        calculatorController.processOperation(value + "");
                 }
             });
 
