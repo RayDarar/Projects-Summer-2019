@@ -1,12 +1,10 @@
 package Easy.Calculator.modules;
 
-import java.io.IOException;
 import java.util.ArrayList;
 
 import Easy.Calculator.Calculator;
 import Easy.Calculator.controllers.CalculatorController;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
