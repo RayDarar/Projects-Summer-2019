@@ -80,7 +80,7 @@ public class DataModule {
     }
 
     public void loseFocus() {
-        calculator.requestFocus();
+        calculator.getScene().getRoot().requestFocus();
     }
 
     public void showCalculator() {

@@ -39,7 +39,11 @@ public class CalculatorController {
 
     public void calculate() {
         try {
-            double result = logic.calculate(mainText.getText());
+            String result = logic.calculate(mainText.getText()) + "";
+
+            if (result.substring(result.indexOf(".") + 1).equals("0"))
+                result = result.substring(0, result.indexOf("."));
+
             setText(mainHistoryText, mainText.getText());
             setText(mainText, result + "");
         } catch (Exception e) {
@@ -53,7 +57,11 @@ public class CalculatorController {
     }
 
     public void processNumpad(String value) {
-        setText(mainText, mainText.getText() + value);
+        String text = mainText.getText();
+        if (text.length() != 0 && text.charAt(text.length() - 1) == '0')
+            text = text.substring(0, text.length() - 1);
+
+        setText(mainText, text + value);
         wasOperator = false;
     }
 
