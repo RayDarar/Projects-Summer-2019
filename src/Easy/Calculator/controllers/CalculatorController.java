@@ -53,6 +53,7 @@ public class CalculatorController {
 
     public void processNumpad(String value) {
         setText(mainText, mainText.getText() + value);
+        wasOperator = false;
     }
 
     @FXML
@@ -64,7 +65,8 @@ public class CalculatorController {
 
     public void processOperation(String value) {
         if (!wasOperator) {
-            
+            setText(mainText, mainText.getText() + value);
+            wasOperator = true;
         }
     }
 
@@ -73,14 +75,24 @@ public class CalculatorController {
         processOperation(((Button) event.getSource()).getText());
     }
 
+    public void clear() {
+        setText(mainText, "");
+        setText(mainHistoryText, "");
+    }
+
     @FXML
     private void clear(ActionEvent event) {
+        clear();
+    }
 
+    public void back() {
+        setText(mainText, mainText.getText().substring(0, mainText.getText().length() - 1));
     }
 
     @FXML
     private void back(ActionEvent event) {
-
+        if (mainText.getText().length() != 0)
+            back();
     }
 
     @FXML
