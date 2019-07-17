@@ -1,6 +1,7 @@
 package Easy.Calculator.modules;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import Easy.Calculator.Calculator;
 import Easy.Calculator.controllers.CalculatorController;
@@ -42,7 +43,12 @@ public class DataModule {
 
             calculator.getScene().addEventHandler(KeyEvent.KEY_PRESSED, key -> {
                 char value = key.getText().charAt(0);
-                if (Character.isDigit(value)) {
+                ArrayList<Character> operators = new ArrayList<>();
+                operators.add('+');
+                operators.add('-');
+                operators.add('*');
+                operators.add('/');
+                if (Character.isDigit(value) || operators.contains(value)) {
 
                 }
             });
