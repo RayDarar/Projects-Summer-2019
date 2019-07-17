@@ -57,11 +57,7 @@ public class CalculatorController {
     }
 
     public void processNumpad(String value) {
-        String text = mainText.getText();
-        if (text.length() != 0 && text.charAt(text.length() - 1) == '0')
-            text = text.substring(0, text.length() - 1);
-
-        setText(mainText, text + value);
+        setText(mainText, mainText.getText() + value);
         wasOperator = false;
     }
 
