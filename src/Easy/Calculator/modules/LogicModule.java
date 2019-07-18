@@ -1,6 +1,8 @@
 package Easy.Calculator.modules;
 
+import java.util.LinkedList;
 import java.util.Stack;
+
 
 /**
  * LogicModule
@@ -8,9 +10,11 @@ import java.util.Stack;
  */
 
 public class LogicModule {
+    // Singleton items
     private static LogicModule logic;
 
     private LogicModule() {
+        history = new LinkedList<>();
     }
 
     public static LogicModule getInstance() {
@@ -21,8 +25,28 @@ public class LogicModule {
     }
 
 
+    // History items
+    private class HistoryItem {
+        String expression;
+        double result;
 
-    public double calculate(String expression) {
+        HistoryItem(String e, double r) {
+            expression = e;
+            result = r;
+        }
+    }
+
+    private LinkedList<HistoryItem> history;
+
+    // Other logic
+
+    /**
+     * After calculating the expression, we should add it to history
+     * 
+     */
+    public double calculate(String expression) throws Exception {
+        double result = 0;
+
         String expr = expression;
 
         String[] numbers = expression.replaceAll("[-/()+*]", " ").split(" ");
@@ -90,8 +114,13 @@ public class LogicModule {
             }
             i++;
 
+      addToHistory(expression, result);
             return numStack.pop();
-        }
+    }
+
+    private void addToHistory(String expression, double result) {
+        history.add(new HistoryItem(expression, result));
+    }
 
     private static int getPriority(String operation){
         switch (operation){
@@ -104,5 +133,4 @@ public class LogicModule {
         }
         return 0;
     }
-
 }

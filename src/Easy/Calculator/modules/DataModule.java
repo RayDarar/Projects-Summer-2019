@@ -1,11 +1,12 @@
 package Easy.Calculator.modules;
 
-import java.io.IOException;
+import java.util.ArrayList;
 
 import Easy.Calculator.Calculator;
+import Easy.Calculator.controllers.CalculatorController;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
 /**
@@ -29,23 +30,55 @@ public class DataModule {
     private Stage calculator; // Also a parent stage
     private Stage history;
 
-    public void loadStages(Stage parentStage) {
+    public void loadStages(Stage parentStage) throws Exception {
         if (!stagesLoaded) {
+            FXMLLoader calculatorLoader = new FXMLLoader(Calculator.class.getResource("res/calculator.fxml"));
             calculator = parentStage;
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Calculator.class.getResource("res/history.fxml"));
+            calculator.setTitle("Calculator");
+            calculator.setScene(new Scene(calculatorLoader.load(), 240, 305));
+            CalculatorController calculatorController = calculatorLoader.getController();
+            calculatorController.init();
 
-            try {
-                loader.load();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            calculator.getScene().addEventHandler(KeyEvent.KEY_TYPED, key -> { // Operators/digits
+                Character value = key.getCharacter().charAt(0);
+                ArrayList<Character> inputs = new ArrayList<>();
+                inputs.add('+');
+                inputs.add('-');
+                inputs.add('*');
+                inputs.add('/');
+                if (Character.isDigit(value) || value.equals('(') || value.equals(')'))
+                    calculatorController.processNumpad(value + "");
+                else if (inputs.contains(value))
+                    calculatorController.processOperation(value + "");
+            });
+            calculator.getScene().addEventHandler(KeyEvent.KEY_PRESSED, key -> { // Special keys, like you :3
+                switch (key.getCode()) {
+                case BACK_SPACE:
+                    calculatorController.back();
+                    break;
+                case C:
+                    calculatorController.clear();
+                    break;
+                case H:
+                    calculatorController.toHistory(null);
+                    break;
+                case ENTER:
+                    calculatorController.calculate();
+                    break;
+                default:
+                    break;
+                }
+            });
 
-            Parent root = loader.getRoot();
             history = new Stage();
-            history.setScene(new Scene(root));
+            history.setScene(new Scene(FXMLLoader.load(Calculator.class.getResource("res/history.fxml")), 240, 305));
+            history.setTitle("History");
             stagesLoaded = true;
         }
+    }
+
+    public void loseFocus() {
+        calculator.getScene().getRoot().requestFocus();
     }
 
     public void showCalculator() {
