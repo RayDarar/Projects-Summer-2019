@@ -3,7 +3,6 @@ package Easy.Calculator.modules;
 import java.util.LinkedList;
 import java.util.Stack;
 
-
 /**
  * LogicModule
  * 
@@ -23,7 +22,6 @@ public class LogicModule {
 
         return logic;
     }
-
 
     // History items
     private class HistoryItem {
@@ -65,33 +63,33 @@ public class LogicModule {
             numStack.push(n);
             if (operations.length > 1) {
 
-                if ((getPriority(operations[i]) >= getPriority(operationStack.peek())) ) {
+                if ((getPriority(operations[i]) >= getPriority(operationStack.peek()))) {
                     operationStack.push(operations[i]);
                 }
                 if (getPriority(operations[i]) < getPriority(operationStack.peek())) {
                     switch (operationStack.peek()) {
-                        case "*":
-                            numStack.push(numStack.pop() * numStack.pop());
-                            operationStack.pop();
-                            break;
-                        case "/":
-                            numStack.push(numStack.pop() / numStack.pop());
-                            operationStack.pop();
-                            break;
+                    case "*":
+                        numStack.push(numStack.pop() * numStack.pop());
+                        operationStack.pop();
+                        break;
+                    case "/":
+                        numStack.push(numStack.pop() / numStack.pop());
+                        operationStack.pop();
+                        break;
                     }
                     operationStack.push(operations[i]);
                 }
                 switch (operationStack.peek()) {
-                    case "+":
-                        numStack.push(numStack.pop() + numStack.pop());
-                        operationStack.pop();
-                        break;
-                    case "-":
-                        numStack.push(numStack.pop() - numStack.pop());
-                        operationStack.pop();
-                        break;
+                case "+":
+                    numStack.push(numStack.pop() + numStack.pop());
+                    operationStack.pop();
+                    break;
+                case "-":
+                    numStack.push(numStack.pop() - numStack.pop());
+                    operationStack.pop();
+                    break;
                 }
-            }else{
+            } else {
                 switch (operationStack.peek()) {
                 case "+":
                     numStack.push(numStack.pop() + numStack.pop());
@@ -109,27 +107,31 @@ public class LogicModule {
                     numStack.push(numStack.pop() / numStack.pop());
                     operationStack.pop();
                     break;
-                    }
                 }
             }
-            i++;
+        }
+        i++;
 
-      addToHistory(expression, result);
-            return numStack.pop();
+        addToHistory(expression, result);
+        return numStack.pop();
     }
 
     private void addToHistory(String expression, double result) {
         history.add(new HistoryItem(expression, result));
     }
 
-    private static int getPriority(String operation){
-        switch (operation){
-            case "+": return 1;
-            case "-": return 1;
-            case "/": return 2;
-            case "*": return 2;
-//            case "(": return 3;
-//            case ")": return 3;
+    private static int getPriority(String operation) {
+        switch (operation) {
+        case "+":
+            return 1;
+        case "-":
+            return 1;
+        case "/":
+            return 2;
+        case "*":
+            return 2;
+        // case "(": return 3;
+        // case ")": return 3;
         }
         return 0;
     }
