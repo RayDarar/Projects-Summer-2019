@@ -1,7 +1,7 @@
 package Easy.Calculator.modules;
 
 import java.util.LinkedList;
-import java.util.Stack;
+
 
 /**
  * LogicModule
@@ -42,97 +42,79 @@ public class LogicModule {
      * After calculating the expression, we should add it to history
      * 
      */
+    private static boolean isDelim(char token){
+        return token == ' ';
+    }
+    private static boolean isOperator(char token){
+        return token =='+'|| token=='-' || token =='*'|| token=='/';
+    }
+    private static int getPriority(char operation) {
+        switch (operation) {
+            case '+':
+            case '-':
+                return 1;
+            case '*':
+            case '/':
+                return 2;
+            default:
+                return -1;
+        }
+    }
+    private static void processOperator(LinkedList<Double> numbers,char operation ){
+        double num1 = numbers.removeLast();
+        double num2 = numbers.removeLast();
+
+        switch (operation) {
+            case '+':
+                numbers.add(num1+num2);
+                break;
+            case '-':
+                numbers.add(num1-num2);
+                break;
+            case '*':
+                numbers.add(num1*num2);
+                break;
+            case '/':
+                numbers.add(num2/num1);
+                break;
+        }
+    }
+
     public double calculate(String expression) throws Exception {
-        double result = 0;
 
         String expr = expression;
 
-        String[] numbers = expression.replaceAll("[-/()+*]", " ").split(" ");
-        String[] operations = expr.replaceAll("[1234567890]", "").split("");
+        LinkedList<Double> numStack = new LinkedList<Double>();
+        LinkedList<Character> operationStack = new LinkedList<Character>();
 
-        Stack<Double> numStack = new Stack<>();
-        Stack<String> operationStack = new Stack<>();
-
-        numStack.push(Double.parseDouble(numbers[0]));
-        operationStack.push(operations[0]);
-        double n;
-        int i = 1;
-
-        while (!operationStack.isEmpty()) {
-            n = Double.parseDouble(numbers[i]);
-            numStack.push(n);
-            if (operations.length > 1) {
-
-                if ((getPriority(operations[i]) >= getPriority(operationStack.peek()))) {
-                    operationStack.push(operations[i]);
-                }
-                if (getPriority(operations[i]) < getPriority(operationStack.peek())) {
-                    switch (operationStack.peek()) {
-                    case "*":
-                        numStack.push(numStack.pop() * numStack.pop());
-                        operationStack.pop();
-                        break;
-                    case "/":
-                        numStack.push(numStack.pop() / numStack.pop());
-                        operationStack.pop();
-                        break;
-                    }
-                    operationStack.push(operations[i]);
-                }
-                switch (operationStack.peek()) {
-                case "+":
-                    numStack.push(numStack.pop() + numStack.pop());
-                    operationStack.pop();
-                    break;
-                case "-":
-                    numStack.push(numStack.pop() - numStack.pop());
-                    operationStack.pop();
-                    break;
-                }
-            } else {
-                switch (operationStack.peek()) {
-                case "+":
-                    numStack.push(numStack.pop() + numStack.pop());
-                    operationStack.pop();
-                    break;
-                case "-":
-                    numStack.push(numStack.pop() - numStack.pop());
-                    operationStack.pop();
-                    break;
-                case "*":
-                    numStack.push(numStack.pop() * numStack.pop());
-                    operationStack.pop();
-                    break;
-                case "/":
-                    numStack.push(numStack.pop() / numStack.pop());
-                    operationStack.pop();
-                    break;
-                }
+        for (int i = 0; i <expr.length() ; i++) {
+            char token = expr.charAt(i);
+            if(isDelim(token)) continue;
+            if(token =='(') operationStack.add('(');
+            else if(token==')'){
+                while(operationStack.getLast()!='(')
+                    processOperator(numStack,operationStack.removeLast());
+                operationStack.removeLast();
+            }else if (isOperator(token)){
+                while(!operationStack.isEmpty()&& getPriority(operationStack.getLast())>= getPriority(token))
+                    processOperator(numStack,operationStack.removeLast());
+                operationStack.add(token);
+            }else{
+                String operand ="";
+                while (i<expr.length()&&Character.isDigit(expr.charAt(i)))
+                    operand+= expr.charAt(i++);
+                --i;
+                numStack.add(Double.parseDouble(operand));
             }
         }
-        i++;
-
-        addToHistory(expression, result);
-        return numStack.pop();
+        while (!operationStack.isEmpty())
+            processOperator(numStack,operationStack.removeLast());
+       return numStack.get(0);
     }
 
     private void addToHistory(String expression, double result) {
         history.add(new HistoryItem(expression, result));
     }
 
-    private static int getPriority(String operation) {
-        switch (operation) {
-        case "+":
-            return 1;
-        case "-":
-            return 1;
-        case "/":
-            return 2;
-        case "*":
-            return 2;
-        // case "(": return 3;
-        // case ")": return 3;
-        }
-        return 0;
-    }
+
 }
