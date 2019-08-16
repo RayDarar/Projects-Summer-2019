@@ -90,7 +90,7 @@
                <font>
                   <Font name="System Bold" size="18.0" />
                </font></Button>
-            <Button id="dotBut" fx:id="dotBut" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #DEDACA;" text="." GridPane.rowIndex="4">
+            <Button id="dotBut" fx:id="dotBut" mnemonicParsing="false" onAction="#processOperation" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #DEDACA;" text="." GridPane.rowIndex="4">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font></Button>
@@ -98,7 +98,7 @@
                <font>
                   <Font size="18.0" />
                </font></Button>
-            <Button id="eqBut" fx:id="eqBut" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #DEDACA;" text="=" GridPane.columnIndex="2" GridPane.rowIndex="4">
+            <Button id="eqBut" fx:id="eqBut" mnemonicParsing="false" onAction="#calculate" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #DEDACA;" text="=" GridPane.columnIndex="2" GridPane.rowIndex="4">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font></Button>

@@ -49,6 +49,9 @@ public class CalculatorController {
         } catch (Exception e) {
             setText(mainHistoryText, "Error: bad expression");
         }
+
+//        try{System.out.println(logic.calculate("2*(2+2)"));}
+//        catch (Exception e){}
     }
 
     public void init() {
