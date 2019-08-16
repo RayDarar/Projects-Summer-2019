@@ -81,7 +81,6 @@ public class LogicModule {
     }
 
     public double calculate(String expression) throws Exception {
-
         String expr = expression;
 
         LinkedList<Double> numStack = new LinkedList<Double>();
@@ -110,11 +109,14 @@ public class LogicModule {
         while (!operationStack.isEmpty())
             processOperator(numStack,operationStack.removeLast());
        return numStack.get(0);
+
+        
+
+        addToHistory(expression, result);
+        return numStack.pop();
     }
 
     private void addToHistory(String expression, double result) {
         history.add(new HistoryItem(expression, result));
     }
-
-
 }
