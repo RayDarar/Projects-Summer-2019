@@ -46,18 +46,19 @@ public class CalculatorController {
 
             setText(mainHistoryText, mainText.getText());
             setText(mainText, result + "");
+            history.addToHistory(mainHistoryText.getText(), result);
         } catch (Exception e) {
             setText(mainHistoryText, "Error: bad expression");
         }
-
-//        try{System.out.println(logic.calculate("2*(2+2)"));}
-//        catch (Exception e){}
     }
 
-    public void init() {
+    public void init(HistoryController history) {
         mainText.setEditable(false);
         mainHistoryText.setEditable(false);
+        this.history = history;
     }
+
+    private HistoryController history;
 
     public void processNumpad(String value) {
         setText(mainText, mainText.getText() + value);

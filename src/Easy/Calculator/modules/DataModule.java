@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import Easy.Calculator.Calculator;
 import Easy.Calculator.controllers.CalculatorController;
+import Easy.Calculator.controllers.HistoryController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyEvent;
@@ -37,7 +38,6 @@ public class DataModule {
             calculator.setTitle("Calculator");
             calculator.setScene(new Scene(calculatorLoader.load(), 240, 305));
             CalculatorController calculatorController = calculatorLoader.getController();
-            calculatorController.init();
 
             calculator.getScene().addEventHandler(KeyEvent.KEY_TYPED, key -> { // Operators/digits
                 Character value = key.getCharacter().charAt(0);
@@ -70,9 +70,13 @@ public class DataModule {
                 }
             });
 
+            FXMLLoader historyLoader = new FXMLLoader(Calculator.class.getResource("res/history.fxml"));
             history = new Stage();
-            history.setScene(new Scene(FXMLLoader.load(Calculator.class.getResource("res/history.fxml")), 240, 305));
             history.setTitle("History");
+            history.setScene(new Scene(historyLoader.load(), 240, 305));
+            HistoryController HistoryController = historyLoader.getController();
+            calculatorController.init(HistoryController);
+
             stagesLoaded = true;
         }
     }
