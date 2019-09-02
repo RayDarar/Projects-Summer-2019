@@ -1,8 +1,6 @@
 # Vscode working folders
 .vscode/
 .settings/
-.classpath
-.project
 
 # IntelIJ working folders
 .idea/
