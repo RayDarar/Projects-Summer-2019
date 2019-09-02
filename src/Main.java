@@ -1,4 +1,4 @@
-import Easy.Calculator.Calculator;
+import Easy.Lights.Lights;
 
 /**
  * Main class for Java solutions
@@ -8,6 +8,6 @@ import Easy.Calculator.Calculator;
 
 public class Main {
     public static void main(String[] args) {
-        Calculator.execute(args);
+        Lights.execute(args);
     }
 }
