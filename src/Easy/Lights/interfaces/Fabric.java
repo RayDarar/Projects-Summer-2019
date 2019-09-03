@@ -1,6 +1,6 @@
 package Easy.Lights.interfaces;
 
-import Easy.Lights.classes.Data;
+import Easy.Lights.classes.Controller;
 
 /**
  * IFabric
@@ -8,7 +8,7 @@ import Easy.Lights.classes.Data;
  */
 
 public class Fabric {
-    public static IData getData() {
-        return new Data();
+    public static IController getData() {
+        return new Controller();
     }
 }

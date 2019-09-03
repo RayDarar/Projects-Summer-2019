@@ -1,6 +1,6 @@
 package Easy.Lights;
 
-import Easy.Lights.interfaces.IData;
+import Easy.Lights.interfaces.IController;
 import Easy.Lights.interfaces.Fabric;
 import javafx.application.Application;
 import javafx.stage.Stage;
@@ -11,7 +11,7 @@ import javafx.stage.Stage;
  */
 public class Lights extends Application {
 
-    private static IData data;
+    private static IController data;
 
     @Override
     public void start(Stage stage) throws Exception {
