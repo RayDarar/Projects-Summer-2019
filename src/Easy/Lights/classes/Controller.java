@@ -86,4 +86,9 @@ public class Controller implements IController {
     public void off() {
         state = false;
     }
+
+    @Override
+    public boolean getState() {
+        return state;
+    }
 }

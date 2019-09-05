@@ -7,9 +7,7 @@ import Easy.Lights.interfaces.Fabric;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Ellipse;
 import javafx.stage.Stage;
 
 /**
@@ -19,7 +17,7 @@ import javafx.stage.Stage;
  */
 public class Lights extends Application {
 
-    private static IController controller;
+    public static IController controller;
     private static boolean state = true;
     private static LightsController lightsController;
 
@@ -32,7 +30,8 @@ public class Lights extends Application {
             public void run() {
                 try {
                     while (state) {
-                        update(controller.getData());
+                        if (controller.getState())
+                            update(controller.getData());
                         Thread.sleep(300);
                     }
                 } catch (Exception e) {
@@ -50,8 +49,13 @@ public class Lights extends Application {
     }
 
     public void update(String[] colors) {
-        // Update colors
-
+        lightsController.light_1.setFill(Color.web(colors[0]));
+        lightsController.light_2.setFill(Color.web(colors[1]));
+        lightsController.light_3.setFill(Color.web(colors[2]));
+        lightsController.light_4.setFill(Color.web(colors[3]));
+        lightsController.light_5.setFill(Color.web(colors[4]));
+        lightsController.light_6.setFill(Color.web(colors[5]));
+        lightsController.light_7.setFill(Color.web(colors[6]));
     }
 
     public static void execute(String[] args) {

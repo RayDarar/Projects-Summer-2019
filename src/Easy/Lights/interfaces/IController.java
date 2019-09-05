@@ -11,4 +11,6 @@ public interface IController {
     public void on();
 
     public void off();
+
+    public boolean getState();
 }
