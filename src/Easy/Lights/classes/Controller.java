@@ -2,6 +2,7 @@ package Easy.Lights.classes;
 
 import java.util.Random;
 
+import Easy.Lights.Lights;
 import Easy.Lights.interfaces.IController;
 
 /**
@@ -14,9 +15,7 @@ public class Controller implements IController {
     private boolean state;
     private Thread task;
     private long time;
-    private String[][] colors = 
-    { 
-            { "#FF0000", "#CC0000", "#660000", "#CC0000", "#FF0000" }, // red
+    private String[][] colors = { { "#FF0000", "#CC0000", "#660000", "#CC0000", "#FF0000" }, // red
             { "#FF7B00", "#CC6300", "#663100", "#CC6300", "#FF7B00" }, // orange
             { "#FFE900", "#CCBB00", "#665E00", "#CCBB00", "#FFE900" }, // yellow
             { "#49FF01", "#3ACC00", "#1D6600", "#3ACC00", "#49FF01" }, // green
@@ -30,8 +29,8 @@ public class Controller implements IController {
 
     public Controller() {
         state = false;
-        time = 300;
-        
+        time = 100;
+
         // Beginning state
         Random rnd = new Random();
         for (int i = 0; i < n_of_colors; i++)
@@ -41,8 +40,9 @@ public class Controller implements IController {
             @Override
             public void run() {
                 try {
-                    while (state) {
-                        update();
+                    while (Lights.state) {
+                        if (state)
+                            update();
                         Thread.sleep(time);
                     }
                 } catch (Exception e) {
@@ -90,5 +90,11 @@ public class Controller implements IController {
     @Override
     public boolean getState() {
         return state;
+    }
+
+    @Override
+    public void setTime(long time) {
+        if (time >= 100 && time <= 1000)
+            this.time = time;
     }
 }

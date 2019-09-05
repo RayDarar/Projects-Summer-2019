@@ -4,7 +4,6 @@ import Easy.Lights.Lights;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.paint.Color;
 import javafx.scene.shape.Ellipse;
 
 public class LightsController {

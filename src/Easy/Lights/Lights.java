@@ -18,7 +18,7 @@ import javafx.stage.Stage;
 public class Lights extends Application {
 
     public static IController controller;
-    private static boolean state = true;
+    public static boolean state = true;
     private static LightsController lightsController;
 
     @Override
@@ -32,7 +32,7 @@ public class Lights extends Application {
                     while (state) {
                         if (controller.getState())
                             update(controller.getData());
-                        Thread.sleep(300);
+                        Thread.sleep(100);
                     }
                 } catch (Exception e) {
                 }
