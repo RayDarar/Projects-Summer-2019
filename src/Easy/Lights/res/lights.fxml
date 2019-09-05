@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="517.0" prefWidth="616.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<Pane fx:controller="Easy.Lights.Controllers.LightsController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="517.0" prefWidth="616.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fx:id="start_Button" fitHeight="517.0" fitWidth="600.0" layoutX="110.0" pickOnBounds="true" preserveRatio="true" scaleX="1.6">
          <image>
@@ -66,7 +66,7 @@
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d3d3c0" height="10.0" layoutX="209.0" layoutY="130.0" rotate="5.0" stroke="BLACK" strokeType="INSIDE" width="15.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d3d3c0" height="10.0" layoutX="408.0" layoutY="128.0" rotate="-10.0" stroke="BLACK" strokeType="INSIDE" width="15.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d3d3c0" height="10.0" layoutX="345.0" layoutY="130.0" rotate="-5.0" stroke="BLACK" strokeType="INSIDE" width="15.0" />
-      <Button layoutX="190.0" layoutY="273.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="107.0" style="-fx-background-color: #F6F5F0; -fx-background-radius: 50;" text="Start" textFill="#8d0505">
+      <Button layoutX="556.0" layoutY="-237.0" mnemonicParsing="false" onAction="#setColor" prefHeight="46.0" prefWidth="107.0" style="-fx-background-color: #F6F5F0; -fx-background-radius: 50;" text="Start" textFill="#8d0505">
          <font>
             <Font name="System Bold" size="29.0" />
          </font>
