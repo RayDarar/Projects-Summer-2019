@@ -11,34 +11,34 @@ import javafx.scene.shape.Ellipse;
 public class LightsController {
 
     @FXML
-    public ToggleButton start_Button = new ToggleButton();
+    public ToggleButton start_Button;
 
     @FXML
-    public ToggleButton stop_Button = new ToggleButton();
+    public ToggleButton stop_Button;
 
     @FXML
-    public Ellipse light_1 = new Ellipse();
+    public Ellipse light_1;
 
     @FXML
-    public Ellipse light_2 = new Ellipse();
+    public Ellipse light_2;
 
     @FXML
-    public Ellipse light_3 = new Ellipse();
+    public Ellipse light_3;
 
     @FXML
-    public Ellipse light_4 = new Ellipse();
+    public Ellipse light_4;
 
     @FXML
-    public Ellipse light_5 = new Ellipse();
+    public Ellipse light_5;
 
     @FXML
-    public Ellipse light_6 = new Ellipse();
+    public Ellipse light_6;
 
     @FXML
-    public Ellipse light_7 = new Ellipse();
+    public Ellipse light_7;
 
     @FXML
-    public Slider slider = new Slider(100, 100, 1000);
+    public Slider slider;
 
     @FXML
     public Label value = new Label();
@@ -46,11 +46,12 @@ public class LightsController {
     @FXML
     private void setColor(ActionEvent event) {
         Lights.controller.on();
+        slider.setDisable(true);
     }
 
     @FXML
     private void stop(ActionEvent ev) {
         Lights.controller.off();
-
+        slider.setDisable(false);
     }
 }

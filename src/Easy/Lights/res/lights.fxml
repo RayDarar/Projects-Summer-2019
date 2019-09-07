@@ -1,20 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Slider?>
-<?import javafx.scene.control.ToggleButton?>
-<?import javafx.scene.effect.Bloom?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.shape.CubicCurve?>
-<?import javafx.scene.shape.Ellipse?>
-<?import javafx.scene.shape.Rectangle?>
-<?import javafx.scene.text.Font?>
+<?import javafx.geometry.Insets ?>
+<?import javafx.scene.Cursor ?>
+<?import javafx.scene.control.Label ?>
+<?import javafx.scene.control.Slider ?>
+<?import javafx.scene.control.ToggleButton ?>
+<?import javafx.scene.effect.Bloom ?>
+<?import javafx.scene.image.Image ?>
+<?import javafx.scene.image.ImageView ?>
+<?import javafx.scene.layout.Pane ?>
+<?import javafx.scene.shape.CubicCurve ?>
+<?import javafx.scene.shape.Ellipse ?>
+<?import javafx.scene.shape.Rectangle ?>
+<?import javafx.scene.text.Font ?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="517.0" prefWidth="616.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Easy.Lights.Controllers.LightsController">
+<Pane fx:controller="Easy.Lights.Controllers.LightsController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="517.0" prefWidth="616.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fitHeight="517.0" fitWidth="600.0" layoutX="119.0" pickOnBounds="true" preserveRatio="true" scaleX="1.6">
          <image>
@@ -67,7 +67,7 @@
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d3d3c0" height="10.0" layoutX="209.0" layoutY="130.0" rotate="5.0" stroke="BLACK" strokeType="INSIDE" width="15.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d3d3c0" height="10.0" layoutX="408.0" layoutY="128.0" rotate="-10.0" stroke="BLACK" strokeType="INSIDE" width="15.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d3d3c0" height="10.0" layoutX="345.0" layoutY="130.0" rotate="-5.0" stroke="BLACK" strokeType="INSIDE" width="15.0" />
-      <Slider fx:id="slder" layoutX="212.0" layoutY="317.0" majorTickUnit="50.0" max="1000.0" min="100.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="50.0" prefWidth="192.0" showTickLabels="true" showTickMarks="true" value="100.0" />
+      <Slider fx:id="slider" layoutX="212.0" layoutY="317.0" majorTickUnit="50.0" max="1000.0" min="100.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="50.0" prefWidth="192.0" showTickLabels="true" showTickMarks="true" value="100.0" />
       <Label fx:id="value" layoutX="416.0" layoutY="326.0" prefHeight="29.0" prefWidth="56.0" style="-fx-background-color: #F6F5F0;" text="100" textAlignment="CENTER" textFill="#8d0505">
          <font>
             <Font size="22.0" />
