@@ -1,4 +1,4 @@
-package Easy;
+package Easy.Bin2Dec;
 
 /**
  * Bin2Dec project

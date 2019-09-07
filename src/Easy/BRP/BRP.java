@@ -1,4 +1,4 @@
-package Easy;
+package Easy.BRP;
 
 import javafx.application.Application;
 import javafx.geometry.Pos;
