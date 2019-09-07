@@ -15,4 +15,6 @@ public interface IController {
     public boolean getState();
 
     public void setTime(long time);
+
+    public long getTime();
 }

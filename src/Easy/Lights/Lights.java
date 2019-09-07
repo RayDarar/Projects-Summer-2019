@@ -1,14 +1,13 @@
 package Easy.Lights;
 
 import Easy.Lights.interfaces.IController;
-
-import Easy.Lights.Controllers.LightsController;
 import Easy.Lights.interfaces.Fabric;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import Easy.Lights.Controllers.*;
 
 /**
  * Lights
@@ -32,7 +31,7 @@ public class Lights extends Application {
                     while (state) {
                         if (controller.getState())
                             update(controller.getData());
-                        Thread.sleep(100);
+                        Thread.sleep(controller.getTime());
                     }
                 } catch (Exception e) {
                 }
@@ -44,6 +43,13 @@ public class Lights extends Application {
         stage.setScene(new Scene(stageLoader.load(), 625, 500));
 
         lightsController = stageLoader.getController();
+
+        lightsController.slider.valueProperty().addListener((ov, oldV, newV) -> {
+            if (!controller.getState()) {
+                lightsController.value.setText(newV.longValue() + "");
+                controller.setTime(newV.longValue());
+            }
+        });
 
         stage.show();
     }

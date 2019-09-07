@@ -97,4 +97,9 @@ public class Controller implements IController {
         if (time >= 100 && time <= 1000)
             this.time = time;
     }
+
+    @Override
+    public long getTime() {
+        return time;
+    }
 }
