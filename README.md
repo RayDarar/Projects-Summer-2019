@@ -7,9 +7,11 @@ Two students decided to improve their programming skills by doing cool things !
 Most of the projects ideas came from [this repository](https://github.com/florinpop17/app-ideas) and one is updating [this repo](https://github.com/RayDarar/Labirint).
 
 ## Projects 📑
-- [x] [Bin2Dec](src/Easy/Bin2Dec.java)
-- [x] [Border-radius Previewer](src/Easy/BRP.java)
-- [ ] [Calculator](src/Easy/Calculator/Calculator.java)
+- [x] [Bin2Dec](src/Easy/Bin2Dec/Bin2Dec.java)
+- [x] [Border-radius Previewer](src/Easy/BRP/BRP.java)
+- [x] [Calculator](src/Easy/Calculator/Calculator.java)
+- [x] [Lights](src/Easy/Lights/Lights.java)
+- [ ] [CauseEffect](src/Easy/CauseEffect/index.html)
 
 
 ## Installation
@@ -24,6 +26,7 @@ public static void main(String[] args) {
     Bin2Dec.execute(args);
 }
 ```
+In case it's WEB, download the whole project folder and open index.html in your web browser
 
 ## Tools
 <table>
@@ -55,6 +58,23 @@ public static void main(String[] args) {
             <ul>
                 <li>Java 8 or higher</li>
                 <li>JavaFX</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>Lights</td>
+        <td>
+            <ul>
+                <li>Java 11</li>
+                <li>JavaFX</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>CauseEffect</td>
+        <td>
+            <ul>
+                <li>Web Browser</li>
             </ul>
         </td>
     </tr>
