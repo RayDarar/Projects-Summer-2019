@@ -11,7 +11,7 @@ Most of the projects ideas came from [this repository](https://github.com/florin
 - [x] [Border-radius Previewer](src/Easy/BRP/BRP.java)
 - [x] [Calculator](src/Easy/Calculator/Calculator.java)
 - [x] [Lights](src/Easy/Lights/Lights.java)
-- [ ] [CauseEffect](src/Easy/CauseEffect/index.html)
+- [x] [CauseEffect](src/Easy/CauseEffect/index.html)
 
 
 ## Installation
