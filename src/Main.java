@@ -1,3 +1,4 @@
+import Easy.Calculator.Calculator;
 import Easy.Lights.Lights;
 
 /**
