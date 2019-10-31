@@ -13,7 +13,7 @@ const logic = {
     changeState: () => {
         logic.isOn = !logic.isOn;
     },
-    getCurrentColor: () => currentColor,
+    getCurrentColor: () => logic.currentColor,
     start: () => {
         logic.changeColor();
     },
@@ -23,8 +23,7 @@ const logic = {
             if (logic.isOn){
                 let colorI = getRandomInt(colors.length);
                 let tintJ = getRandomInt(colors[colorI].length);
-                currentColor = colors[colorI][tintJ];
-                // console.log(logic.getCurrentColor());
+                logic.currentColor = colors[colorI][tintJ];
             }
                 
             logic.changeColor();

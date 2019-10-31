@@ -1,0 +1,117 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+.main {
+    background-color: #efebe9;
+    width: 100vw;
+    height: 100vh;
+}
+
+.line {
+    position: relative;
+    border: 2px solid gray;
+    width: 300px;
+    transform: rotate(90deg);
+    left: calc(50% - 200px);
+}
+
+.ball {
+    background: radial-gradient(circle at 10% 10%, white, red 100%);
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: relative;
+    left: calc(50% - 150px);
+    top: 140px;
+    box-shadow: 0px 0px 200px 10px red;
+}
+
+.overlay {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    opacity: 0.2;
+}
+
+.object {
+    position: relative;
+    width: 200px;
+    height: 400px;
+    margin-left: 200px;
+    margin-top: 200px;
+    z-index: 0;
+    transform: rotateY(0deg);
+}
+
+.room {
+    position: absolute;
+    /* background-color: black; */
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: 0;
+}
+
+.room__wall {
+    border: 2px solid black;
+    width: 50%;
+    transform: rotate(90deg);
+    position: relative;
+}
+
+.room__wall_left {
+    left: -100px;
+}
+
+.room__wall_right {
+    left: calc(50% + 100px);
+}
+
+.room__floor {
+    border: 2px solid black;
+    position: relative;
+    top: calc(50vh);
+    left: calc(50vh - 90px);
+    width: calc(50% + 200px);
+}
+
+.room__floor_sub {
+    transform-origin: 0% 0%;
+    width: 31.1%;
+    top: calc(100% - 16px);
+}
+
+.room__floor_left {
+    left: 0px;
+    transform: rotate(-50.5deg);
+}
+
+.room__floor_right {
+    left: calc(100% - 4px);
+    transform: rotate(-129.5deg);
+}
+
+.ui {
+    z-index: 1;
+    position: absolute;
+    left: 60%;
+}
+
+.button {
+    border-radius: 5px;
+    padding: 1em 2em;
+    top: 50px;
+}
+
+.range {
+    top: 100px;
+}

@@ -5,13 +5,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Color Cycle</title>
     <script src="./script.js" defer></script>
     <script src="./controller.js" defer></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    
+    <div class="main">
+        <div class="overlay"></div>
+        <div class="line"></div>
+        <div class="ball">
+        </div>
+
+        <div class="room">
+            <div class="room__wall room__wall_left"></div>
+            <div class="room__wall room__wall_right"></div>
+            <div class="room__floor"></div>
+            <div class="room__floor room__floor_sub  room__floor_left"></div>
+            <div class="room__floor room__floor_sub room__floor_right"></div>
+        </div>
+
+        <button class="button ui">Start | Stop</button>
+        <input type="range" min="100" max="1500" class="range ui" value="1000">
+
+        <img src="./img/1.png" class="object">
+        <img src="./img/2.png" class="object">
+        <img src="./img/3.png" class="object">
+        <img src="./img/4.png" class="object">
+    </div>
 </body>
 
 </html>
