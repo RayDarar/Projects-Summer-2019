@@ -6,7 +6,7 @@
 const calculate = (str) => {
     const current = new Date();
     const given = new Date(str);
-    let difference = given.getTime() - current.getTime();
+    let difference = given.getTime() - current.getTime() + (given.getTimezoneOffset() * 60 * 1000);
 
     return generateObject(difference);
 }
@@ -40,9 +40,9 @@ const decrement = (date) => {
     const result = generateObject(date.days * 24 * 60 * 60 * 1000 + date.hours * 60 * 60 * 1000 + date.minutes * 60 * 1000 + date.seconds * 1000 - 1000);
 
     return result.days >= 0 ? result : {
-        days: "L",
+        days: "D",
         hours: "O",
-        minutes: "V",
+        minutes: "N",
         seconds: "E"
     };
 }
