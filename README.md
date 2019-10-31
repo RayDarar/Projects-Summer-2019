@@ -12,6 +12,8 @@ Most of the projects ideas came from [this repository](https://github.com/florin
 - [x] [Calculator](src/Easy/Calculator/Calculator.java)
 - [x] [Lights](src/Easy/Lights/Lights.java)
 - [x] [CauseEffect](src/Easy/CauseEffect/index.html)
+- [x] [ColorCycle](src/Easy/ColorCycle/index.html)
+- [ ] [CountdownTimer](src/Easy/CountdownTimer/index.html)
 
 
 ## Installation
@@ -72,6 +74,22 @@ In case it's WEB, download the whole project folder and open index.html in your 
     </tr>
     <tr>
         <td>CauseEffect</td>
+        <td>
+            <ul>
+                <li>Web Browser</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>Color Cycle</td>
+        <td>
+            <ul>
+                <li>Web Browser</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>Countdown Timer</td>
         <td>
             <ul>
                 <li>Web Browser</li>
