@@ -11,7 +11,7 @@ const logic = {
     speed: 1000,
     currentColor: "#FF0000",
     changeState: () => {
-        isOn = !isOn;
+        logic.isOn = !logic.isOn;
     },
     getCurrentColor: () => currentColor,
     start: () => {
@@ -24,13 +24,14 @@ const logic = {
                 let colorI = getRandomInt(colors.length);
                 let tintJ = getRandomInt(colors[colorI].length);
                 currentColor = colors[colorI][tintJ];
+                // console.log(logic.getCurrentColor());
             }
                 
             logic.changeColor();
         }, logic.speed);
     },
     changeSpeed: (new_speed) => {
-        speed = new_speed;
+        logic.speed = new_speed;
     }
 }
 
