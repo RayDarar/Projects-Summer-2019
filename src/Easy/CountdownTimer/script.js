@@ -39,5 +39,10 @@ const generateObject = (ms) => {
 const decrement = (date) => {
     const result = generateObject(date.days * 24 * 60 * 60 * 1000 + date.hours * 60 * 60 * 1000 + date.minutes * 60 * 1000 + date.seconds * 1000 - 1000);
 
-    return result.days >= 0 ? result : "done";
+    return result.days >= 0 ? result : {
+        days: "L",
+        hours: "O",
+        minutes: "V",
+        seconds: "E"
+    };
 }
