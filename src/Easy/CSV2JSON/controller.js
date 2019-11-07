@@ -5,6 +5,5 @@ const output = document.querySelector(".output");
 const convert_btn = document.querySelector(".convert-btn");
 
 convert_btn.onclick = () => {
-    output.value = logic.convert(input.value);
-    
+    output.value = JSON.stringify(logic.convert(input.value));
 }

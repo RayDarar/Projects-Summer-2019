@@ -14,7 +14,8 @@ Most of the projects ideas came from [this repository](https://github.com/florin
 - [x] [CauseEffect](src/Easy/CauseEffect/index.html)
 - [x] [ColorCycle](src/Easy/ColorCycle/index.html)
 - [x] [CountdownTimer](src/Easy/CountdownTimer/index.html)
-- [ ] [CSV2JSON](src/Easy/CSV2JSON/index.html)
+- [x] [CSV2JSON](src/Easy/CSV2JSON/index.html)
+- [ ] [Dollars2Tenge](src/Easy/Dollars2Tenge/index.html)
 
 
 ## Installation
@@ -99,6 +100,14 @@ In case it's WEB, download the whole project folder and open index.html in your 
     </tr>
     <tr>
         <td>CSV to JSON</td>
+        <td>
+            <ul>
+                <li>Web Browser</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>Dollars to Tenge</td>
         <td>
             <ul>
                 <li>Web Browser</li>
