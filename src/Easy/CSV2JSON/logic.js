@@ -1,5 +1,8 @@
 export default {
     convert: (csv) => {
+        while(csv.includes('"')){
+            csv = csv.replace('"','');
+        }
         const array = csv.split("\n");
         const properties = array[0].split(",");
         const jsons = [];
