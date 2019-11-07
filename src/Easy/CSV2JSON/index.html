@@ -7,13 +7,23 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>CSV to JSON</title>
     <link rel="stylesheet" href="style.css">
-    
+
     <script src="controller.js" type="module" defer></script>
 
 </head>
 
 <body>
-
+    <article class="main">
+        <div class="main__block">
+            <textarea class="text-area input" wrap="hard"></textarea>
+        </div>
+        <div class="main__block main__block_no-border">
+            <button class="convert-btn">Convert</button>
+        </div>
+        <div class="main__block">
+            <textarea class="text-area output" wrap="hard" readonly></textarea>
+        </div>
+    </article>
 </body>
 
 </html>
