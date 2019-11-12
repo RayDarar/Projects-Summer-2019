@@ -15,7 +15,8 @@ Most of the projects ideas came from [this repository](https://github.com/florin
 - [x] [ColorCycle](src/Easy/ColorCycle/index.html)
 - [x] [CountdownTimer](src/Easy/CountdownTimer/index.html)
 - [x] [CSV2JSON](src/Easy/CSV2JSON/index.html)
-- [ ] [Dollars2Tenge](src/Easy/Dollars2Tenge/index.html)
+- [x] [Dollars2Tenge](src/Easy/Dollars2Tenge/index.html)
+- [ ] [Dynamic CSS Variables](src/Easy/DynamicCSSVariables/index.html)
 
 
 ## Installation
@@ -35,11 +36,18 @@ In case it's WEB, download the whole project folder and open index.html in your 
 ## Tools
 <table>
     <tr>
-        <td>Project</td>
+        <td>Projects</td>
         <td>Tools</td>
     </tr>
     <tr>
-        <td>Bin2Dec</td>
+        <td>
+            <ul>
+                <li>Bin2Dec</li>
+                <li>Border-radius Previewer</li>
+                <li>Calculator</li>
+                <li>Lights</li>
+            </ul>
+        </td>
         <td>
             <ul>
                 <li>Java 8 or higher</li>
@@ -48,66 +56,15 @@ In case it's WEB, download the whole project folder and open index.html in your 
         </td>
     </tr>
     <tr>
-        <td>Border-radius Previewer</td>
         <td>
             <ul>
-                <li>Java 8 or higher</li>
-                <li>JavaFX && CSS</li>
+                <li>CauseEffect</li>
+                <li>Color Cycle</li>
+                <li>Countdown Timer</li>
+                <li>CSV to JSON</li>
+                <li>Dollars to Tenge</li>
             </ul>
         </td>
-    </tr>
-    <tr>
-        <td>Calculator</td>
-        <td>
-            <ul>
-                <li>Java 8 or higher</li>
-                <li>JavaFX</li>
-            </ul>
-        </td>
-    </tr>
-    <tr>
-        <td>Lights</td>
-        <td>
-            <ul>
-                <li>Java 11</li>
-                <li>JavaFX</li>
-            </ul>
-        </td>
-    </tr>
-    <tr>
-        <td>CauseEffect</td>
-        <td>
-            <ul>
-                <li>Web Browser</li>
-            </ul>
-        </td>
-    </tr>
-    <tr>
-        <td>Color Cycle</td>
-        <td>
-            <ul>
-                <li>Web Browser</li>
-            </ul>
-        </td>
-    </tr>
-    <tr>
-        <td>Countdown Timer</td>
-        <td>
-            <ul>
-                <li>Web Browser</li>
-            </ul>
-        </td>
-    </tr>
-    <tr>
-        <td>CSV to JSON</td>
-        <td>
-            <ul>
-                <li>Web Browser</li>
-            </ul>
-        </td>
-    </tr>
-    <tr>
-        <td>Dollars to Tenge</td>
         <td>
             <ul>
                 <li>Web Browser</li>
