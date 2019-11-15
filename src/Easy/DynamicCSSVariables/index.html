@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>DynamicCSSVariables</title>
+</head>
+
+<body>
+    <article class="main">
+        <h1>Dynamic CSS Variables</h1>
+        <div class="work-space">
+            <label for="location">Location:</label>
+            <input type="range" name="location" class="position" min="-500" max="500" value="0" oninput="changeValue('position', this.value)">
+            <label for="radius">Radius:</label>
+            <input type="range" name="radius" class="radius"  min="0" max="50" value="0" oninput="changeValue('radius', this.value)">
+            <label for="color">Color:</label>
+            <input type="color" name="color" class="color" value="#000000" onchange="changeValue('color', this.value)">
+            <div class="block"></div>
+        </div>
+    </article>
+</body>
+
+</html>
