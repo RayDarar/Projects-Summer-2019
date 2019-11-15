@@ -33,9 +33,11 @@ h1 {
     grid-template-rows: 1fr 1fr 1fr 1fr;
     row-gap: 10px;
 }
-.color{
+
+.color {
     width: 60px;
 }
+
 .block {
     width: 100px;
     height: 100px;

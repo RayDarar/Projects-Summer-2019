@@ -7,16 +7,17 @@ Two students decided to improve their programming skills by doing cool things !
 Most of the projects ideas came from [this repository](https://github.com/florinpop17/app-ideas) and one is updating [this repo](https://github.com/RayDarar/Labirint).
 
 ## Projects 📑
-- [x] [Bin2Dec](src/Easy/Bin2Dec/Bin2Dec.java)
+- [x] [Binary to Decimal](src/Easy/Bin2Dec/Bin2Dec.java)
 - [x] [Border-radius Previewer](src/Easy/BRP/BRP.java)
 - [x] [Calculator](src/Easy/Calculator/Calculator.java)
 - [x] [Lights](src/Easy/Lights/Lights.java)
-- [x] [CauseEffect](src/Easy/CauseEffect/index.html)
-- [x] [ColorCycle](src/Easy/ColorCycle/index.html)
-- [x] [CountdownTimer](src/Easy/CountdownTimer/index.html)
-- [x] [CSV2JSON](src/Easy/CSV2JSON/index.html)
-- [x] [Dollars2Tenge](src/Easy/Dollars2Tenge/index.html)
-- [ ] [Dynamic CSS Variables](src/Easy/DynamicCSSVariables/index.html)
+- [x] [Cause-Effect](src/Easy/CauseEffect/index.html)
+- [x] [Color Cycle](src/Easy/ColorCycle/index.html)
+- [x] [Countdown Timer](src/Easy/CountdownTimer/index.html)
+- [x] [CSV to JSON](src/Easy/CSV2JSON/index.html)
+- [x] [Dollars to Tenge](src/Easy/Dollars2Tenge/index.html)
+- [x] [Dynamic CSS Variables](src/Easy/DynamicCSSVariables/index.html)
+- [ ] [First DB Application](src/Easy/FirstDBApplication/index.html)
 
 
 ## Installation
@@ -42,7 +43,7 @@ In case it's WEB, download the whole project folder and open index.html in your 
     <tr>
         <td>
             <ul>
-                <li>Bin2Dec</li>
+                <li>Bin to Dec</li>
                 <li>Border-radius Previewer</li>
                 <li>Calculator</li>
                 <li>Lights</li>
@@ -58,11 +59,12 @@ In case it's WEB, download the whole project folder and open index.html in your 
     <tr>
         <td>
             <ul>
-                <li>CauseEffect</li>
+                <li>Cause-Effect</li>
                 <li>Color Cycle</li>
                 <li>Countdown Timer</li>
                 <li>CSV to JSON</li>
                 <li>Dollars to Tenge</li>
+                <li>Dynamic CSS Variables</li>
             </ul>
         </td>
         <td>
