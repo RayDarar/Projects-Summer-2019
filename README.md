@@ -3,10 +3,12 @@
 This is going to be funny :D
 
 ## Description 🚀
+
 Two students decided to improve their programming skills by doing cool things !
-Most of the projects ideas came from [this repository](https://github.com/florinpop17/app-ideas) and one is updating [this repo](https://github.com/RayDarar/Labirint).
+Most of the projects ideas came from [this repository](https://github.com/florinpop17/app-ideas) and one is updating [this repo](https://github.com/RayDarar/Labirint) and also [that](https://medium.com/better-programming/the-secret-to-being-a-top-developer-is-building-things-heres-a-list-of-fun-apps-to-build-aac61ac0736c) article.
 
 ## Projects 📑
+
 - [x] [Binary to Decimal](src/Easy/Bin2Dec/Bin2Dec.java)
 - [x] [Border-radius Previewer](src/Easy/BRP/BRP.java)
 - [x] [Calculator](src/Easy/Calculator/Calculator.java)
@@ -19,12 +21,13 @@ Most of the projects ideas came from [this repository](https://github.com/florin
 - [x] [Dynamic CSS Variables](src/Easy/DynamicCSSVariables/index.html)
 - [ ] [First DB Application](src/Easy/FirstDBApplication/index.html)
 
-
 ## Installation
-1) Choose the project
-2) Make sure you have all the tools we used in chosen project.
+
+1. Choose the project
+2. Make sure you have all the tools we used in chosen project.
 
 In case it's Java, execute project from your main using 'Execute' method, example:
+
 ```Java
 import Easy.Bin2Dec;
 
@@ -32,9 +35,11 @@ public static void main(String[] args) {
     Bin2Dec.execute(args);
 }
 ```
+
 In case it's WEB, download the whole project folder and open index.html in your web browser
 
 ## Tools
+
 <table>
     <tr>
         <td>Projects</td>
@@ -76,8 +81,10 @@ In case it's WEB, download the whole project folder and open index.html in your 
 </table>
 
 ## Contributors
+
 - @RayDarar (Ansar) :star:
 - @Anakharsis9 (Dayana) :sparkles:
 
 ## Licence
+
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
