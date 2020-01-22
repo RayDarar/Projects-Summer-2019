@@ -9,17 +9,17 @@ Most of the projects ideas came from [this repository](https://github.com/florin
 
 ## Projects 📑
 
-- [x] [Binary to Decimal](src/Easy/Bin2Dec/Bin2Dec.java)
-- [x] [Border-radius Previewer](src/Easy/BRP/BRP.java)
-- [x] [Calculator](src/Easy/Calculator/Calculator.java)
-- [x] [Lights](src/Easy/Lights/Lights.java)
-- [x] [Cause-Effect](src/Easy/CauseEffect/index.html)
-- [x] [Color Cycle](src/Easy/ColorCycle/index.html)
-- [x] [Countdown Timer](src/Easy/CountdownTimer/index.html)
-- [x] [CSV to JSON](src/Easy/CSV2JSON/index.html)
-- [x] [Dollars to Tenge](src/Easy/Dollars2Tenge/index.html)
-- [x] [Dynamic CSS Variables](src/Easy/DynamicCSSVariables/index.html)
-- [ ] [First DB Application](src/Easy/FirstDBApplication/index.html)
+- [x] [Binary to Decimal](src/Easy/Bin2Dec/)
+- [x] [Border-radius Previewer](src/Easy/BRP/)
+- [x] [Calculator](src/Easy/Calculator/)
+- [x] [Lights](src/Easy/Lights/)
+- [x] [Cause-Effect](src/Easy/CauseEffect/)
+- [x] [Color Cycle](src/Easy/ColorCycle/)
+- [x] [Countdown Timer](src/Easy/CountdownTimer/)
+- [x] [CSV to JSON](src/Easy/CSV2JSON/)
+- [x] [Dollars to Tenge](src/Easy/Dollars2Tenge/)
+- [x] [Dynamic CSS Variables](src/Easy/DynamicCSSVariables/)
+- [ ] [TODO list (First DB)](src/Easy/ToDo/)
 
 ## Installation
 
