@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer></script>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>UTodo</title>
+  </head>
+  <body>
+    <article id="vm">
+      <header class="header">
+        <div class="img-wrapper">
+          <img src="img/logo.png" alt="logo" />
+        </div>
+      </header>
+      <section class="main">
+        <div class="main-top">
+          <h2 class="main-h2">Your to-do list:</h2>
+          <div class="img-wrapper button">
+            <img src="img/plus.png" alt="create" @click="create" />
+          </div>
+        </div>
+        <ol class="main-list">
+          <li
+            v-for="(item, index) in todos"
+            class="main-list__item"
+            :key="item.id"
+          >
+            <span>{{index + 1 +"."}}</span>
+            <span>{{item.text}}</span>
+            <div class="img-wrapper button">
+              <img src="img/complete.png" alt="complete" @click="complete" />
+            </div>
+
+            <div class="priority">
+              <div class="low"></div>
+              <div class="normal"></div>
+              <div class="high"></div>
+            </div>
+            <div class="img-wrapper button">
+              <img src="img/delete.png" alt="delete" @click="remove" />
+            </div>
+          </li>
+        </ol>
+      </section>
+      <footer class="footer">
+        <div class="img-wrapper">
+          <img src="img/logo.png" alt="logo" />
+        </div>
+        <p>
+          Dayana Inc &copy +7 (700) 430-08-45
+        </p>
+      </footer>
+    </article>
+  </body>
+</html>
