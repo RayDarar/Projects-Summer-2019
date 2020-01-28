@@ -34,12 +34,58 @@ footer {
 .img-wrapper > img {
   max-height: 100%;
 }
+.img-wrapper > div {
+  height: 100%;
+  width: 100%;
+}
+.img-wrapper_small {
+  height: 70%;
+}
+.img-wrapper-update {
+  height: 10%;
+  width: 15%;
+}
+.img-wrapper-update > img {
+  max-width: 70%;
+}
+
+.item-text {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.update-off {
+  display: none;
+}
+.update-on {
+  display: inline;
+  cursor: pointer;
+}
+.item-text:hover {
+  cursor: pointer;
+}
+
+.unComplete {
+  height: 90%;
+  width: 10%;
+  background-color: #446085;
+  border: 0.05em solid #7edcfc;
+}
+.complete {
+  height: 90%;
+  width: 10%;
+  /* background-color:#446085; */
+  border: 0.05em solid #7edcfc;
+  background-image: url("img/complete.png");
+  background-size: cover;
+}
 
 .main {
   width: 50%;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   display: flex;
-  background-color:#0C1F38;
+  background-color: #0c1f38;
   flex-direction: column;
   display: flex;
   max-height: calc(100vh - 17%);
@@ -66,41 +112,198 @@ footer {
   padding: 1em;
   display: grid;
   grid-template-columns: 0.5fr 1.5fr 1fr;
+  grid-template-rows: 1fr 1fr;
   justify-items: center;
   align-items: center;
   /* grid-gap: 0.5em; */
-  border-bottom: 0.1em solid ;
+  border-bottom: 0.1em solid;
 }
-.priority{
-  width: 20%;
-  height: 70%;
+.main-list__item-completed {
+  background-color: #2a3b52;
+}
+.back {
+  position: absolute;
+  z-index: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  cursor: pointer;
+}
+.template {
+  position: absolute;
+  top: 40%;
+  left: 30%;
+  min-height: 100px;
+  width: 40%;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  background-color: #112d4d;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+.template-span {
+  font-size: 1.5rem;
+  margin-bottom: 0.3em;
+}
+.template-create {
+  display: grid;
+  grid-template-columns: 0.5fr 1.5fr 0.5fr;
+  min-height: 50px;
+  width: 100%;
+  justify-items: center;
+  align-items: center;
+}
+.template-priority {
+  width: 30%;
+  height: 60%;
   display: flex;
   align-items: flex-end;
 }
-.priority:hover{
-  cursor: pointer;
-}
-.low{
+
+.template-low {
   width: 30%;
   height: 30%;
-  background-color:#446085;
+  background-color: #446085;
   margin-right: 0.1em;
 }
-.normal{
+.template-normal {
   width: 30%;
   height: 60%;
   background-color: #446085;
   margin-right: 0.1em;
 }
-.high{
+.template-high {
   width: 30%;
   height: 100%;
   background-color: #446085;
   margin-right: 0.1em;
 }
 
+.template-low:hover {
+  cursor: pointer;
+  background-color: #13ff14;
+}
+.template-normal:hover {
+  cursor: pointer;
+  background-color: #ffe319;
+}
+.template-high:hover {
+  cursor: pointer;
+  background-color: #ff2218;
+}
+.template-deadline {
+  border-radius: 0.2em;
+  height: 50%;
+  width: 50%;
+  background-color: #446085;
+  border: none;
+  color: aliceblue;
+  padding: 0.3em;
+}
+template-img-wrapper {
+  height: 70%;
+}
+template-img-wrapper > img {
+  max-height: 70%;
+}
+
+.empty-list {
+  text-align: center;
+}
+
+.priority {
+  width: 20%;
+  height: 70%;
+  display: flex;
+  align-items: flex-end;
+}
+.priority:hover {
+  cursor: pointer;
+}
+.low {
+  width: 30%;
+  height: 30%;
+  background-color: #446085;
+  margin-right: 0.1em;
+}
+.normal {
+  width: 30%;
+  height: 60%;
+  background-color: #446085;
+  margin-right: 0.1em;
+}
+.high {
+  width: 30%;
+  height: 100%;
+  background-color: #446085;
+  margin-right: 0.1em;
+}
+
+.low:hover {
+  background-color: #fff;
+}
+.normal:hover {
+  background-color: #fff;
+}
+.high:hover {
+  background-color: #fff;
+}
+
+.deadline {
+  border-radius: 0.2em;
+  height: 50%;
+  width: 40%;
+  background-color: #446085;
+  border: none;
+  color: aliceblue;
+  padding: 0.3em;
+}
+
 .button:hover {
   cursor: pointer;
   transition: 300;
   /* transform: rotateX(10deg); */
+}
+
+.priority-color_red {
+  background-color: #ff2218;
+}
+.priority-color_yellow {
+  background-color: #ffe319;
+}
+.priority-color_green {
+  background-color: #13ff14;
+}
+
+.not-valid {
+  border: 0.1em solid red;
+}
+.not-valid::placeholder {
+  color: red;
+}
+
+.item-text__input {
+  background-color: transparent;
+  color: white;
+  border: none;
+  border-bottom: 1px solid white;
+  padding: 0.3em 0.5em;
+  transition: background-color 0.3s;
+}
+
+.item-text__input_active {
+  background-color: white;
+  color: black;
+}
+
+.icon_small {
+  width: 20px;
+}
+
+.icon_medium {
+  width: 26px;
 }

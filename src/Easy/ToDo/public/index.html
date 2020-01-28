@@ -4,9 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer></script>
+    <script src="./lib/core.js" defer></script>
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
     <title>UTodo</title>
   </head>
   <body>
@@ -19,31 +22,202 @@
       <section class="main">
         <div class="main-top">
           <h2 class="main-h2">Your to-do list:</h2>
-          <div class="img-wrapper button">
-            <img src="img/plus.png" alt="create" @click="create" />
+          <div class="img-wrapper button img-wrapper_small">
+            <img src="img/plus.png" alt="create" @click="toShow" />
+          </div>
+        </div>
+        <div class="back" v-show="show" @click="toShow"></div>
+        <div class="template" v-show="show">
+          <span class="template-span">New todo</span>
+          <textarea
+            class=""
+            name="text"
+            cols="30"
+            rows="5"
+            placeholder="Enter the text"
+            v-model="form.text"
+            ref="textarea"
+            :class="{ 'not-valid': formError.text }"
+          ></textarea>
+          <div class="template-create">
+            <div class="template-priority">
+              <div
+                class="template-low"
+                @click="setPriority(1)"
+                ref="tempLow"
+              ></div>
+              <div
+                class="template-normal"
+                @click="setPriority(2)"
+                ref="tempNormal"
+              ></div>
+              <div
+                class="template-high"
+                @click="setPriority(3)"
+                ref="tempHigh"
+              ></div>
+            </div>
+            <input
+              type="date"
+              name="deadline"
+              class="template-deadline "
+              v-model="form.deadline"
+              @change="updateDeadline($event,item)"
+            />
+            <div class="template-img-wrapper button">
+              <img src="img/plus.png" alt="complete" @click="create" />
+            </div>
           </div>
         </div>
         <ol class="main-list">
           <li
-            v-for="(item, index) in todos"
+            v-for="(item, index) in unCompletedList"
             class="main-list__item"
             :key="item.id"
           >
             <span>{{index + 1 +"."}}</span>
-            <span>{{item.text}}</span>
-            <div class="img-wrapper button">
-              <img src="img/complete.png" alt="complete" @click="complete" />
+            <div class="item-text">
+              <input
+                type="text"
+                v-model="item.text"
+                :readonly="!item.isEditing"
+                class="item-text__input"
+                :class="{'item-text__input_active': item.isEditing }"
+                @keydown.enter="update($event, item)"
+              />
+              <img
+                src="img/update.png"
+                alt="pen"
+                class="icon_medium"
+                @click="enableEditing($event, item)"
+              />
             </div>
-
-            <div class="priority">
-              <div class="low"></div>
-              <div class="normal"></div>
-              <div class="high"></div>
+            <div class="unComplete button" @click="complete(item)"></div>
+            <div class="priority" v-if="item.priority < 1">
+              <div class="low" @click="updatePriority($event,item,1)"></div>
+              <div class="normal" @click="updatePriority($event,item,2)"></div>
+              <div class="high" @click="updatePriority($event,item,3)"></div>
             </div>
-            <div class="img-wrapper button">
-              <img src="img/delete.png" alt="delete" @click="remove" />
+            <div class="priority" v-else-if="item.priority === 1">
+              <div
+                class="low priority-color_green"
+                @click="updatePriority($event,item,1)"
+              ></div>
+              <div class="normal" @click="updatePriority($event,item,2)"></div>
+              <div class="high" @click="updatePriority($event,item,3)"></div>
+            </div>
+            <div class="priority" v-else-if="item.priority === 2">
+              <div
+                class="low priority-color_yellow"
+                @click="updatePriority($event,item,1)"
+              ></div>
+              <div
+                class="normal priority-color_yellow"
+                @click="updatePriority($event,item,2)"
+              ></div>
+              <div class="high" @click="updatePriority($event,item,3)"></div>
+            </div>
+            <div class="priority" v-else-if="item.priority === 3">
+              <div
+                class="low priority-color_red"
+                @click="updatePriority($event,item,1)"
+              ></div>
+              <div
+                class="normal priority-color_red"
+                @click="updatePriority($event,item,2)"
+              ></div>
+              <div
+                class="high priority-color_red"
+                @click="updatePriority($event,item,3)"
+              ></div>
+            </div>
+            <input
+              type="date"
+              name="deadline"
+              class="deadline"
+              :value="item.deadline"
+              @change="updateDeadline($event,item)"
+            />
+            <div class="img-wrapper button img-wrapper_small">
+              <img src="img/delete.png" alt="delete" @click="remove(item.id)" />
             </div>
           </li>
+          <li
+            v-for="(item, index) in completedList"
+            class="main-list__item"
+            :key="item.id"
+            :class="{'main-list__item-completed':item.completed}"
+          >
+            <span>{{index + 1 +"."}}</span>
+            <div class="item-text">
+              <input
+                type="text"
+                v-model="item.text"
+                :readonly="!item.isEditing"
+                class="item-text__input"
+                :class="{'item-text__input_active': item.isEditing }"
+                @keydown.enter="update($event, item)"
+              />
+              <img
+                src="img/update.png"
+                alt="pen"
+                class="icon_medium"
+                @click="enableEditing($event, item)"
+              />
+            </div>
+            <div class="complete button" @click="complete(item)"></div>
+            <div class="priority" v-if="item.priority < 1">
+              <div class="low" @click="updatePriority($event,item,1)"></div>
+              <div class="normal" @click="updatePriority($event,item,2)"></div>
+              <div class="high" @click="updatePriority($event,item,3)"></div>
+            </div>
+            <div class="priority" v-else-if="item.priority === 1">
+              <div
+                class="low priority-color_green"
+                @click="updatePriority($event,item,1)"
+              ></div>
+              <div class="normal" @click="updatePriority($event,item,2)"></div>
+              <div class="high" @click="updatePriority($event,item,3)"></div>
+            </div>
+            <div class="priority" v-else-if="item.priority === 2">
+              <div
+                class="low priority-color_yellow"
+                @click="updatePriority($event,item,1)"
+              ></div>
+              <div
+                class="normal priority-color_yellow"
+                @click="updatePriority($event,item,2)"
+              ></div>
+              <div class="high" @click="updatePriority($event,item,3)"></div>
+            </div>
+            <div class="priority" v-else-if="item.priority === 3">
+              <div
+                class="low priority-color_red"
+                @click="updatePriority($event,item,1)"
+              ></div>
+              <div
+                class="normal priority-color_red"
+                @click="updatePriority($event,item,2)"
+              ></div>
+              <div
+                class="high priority-color_red"
+                @click="updatePriority($event,item,3)"
+              ></div>
+            </div>
+            <input
+              type="date"
+              name="deadline"
+              class="deadline"
+              :value="item.deadline"
+              @change="updateDeadline($event,item)"
+            />
+            <div class="img-wrapper button img-wrapper_small">
+              <img src="img/delete.png" alt="delete" @click="remove(item.id)" />
+            </div>
+          </li>
+          <div v-if="!todos.length">
+            <p class="empty-list">Nothing in the list</p>
+          </div>
         </ol>
       </section>
       <footer class="footer">

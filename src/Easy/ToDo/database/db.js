@@ -14,7 +14,7 @@ module.exports = {
     todo = JSON.parse(data);
     return data;
   },
-  create(text, priority, deadline = null) {
+  create(text = null, priority = null, deadline = null) {
     const entry = {
       id: todo[0] ? todo[todo.length - 1].id + 1 : 1,
       text,

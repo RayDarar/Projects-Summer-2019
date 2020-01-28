@@ -4,12 +4,14 @@ const assert = require("assert");
 const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
+const cors = require("cors");
 const server = express();
 
 const apiRoute = require("./routes/api-route");
 const db = require("./database/db");
 
 server.use(express.static(path.join(__dirname, "public")));
+server.use(cors());
 
 server.use((req, res, next) => {
   console.log(
