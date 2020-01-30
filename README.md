@@ -19,7 +19,8 @@ Most of the projects ideas came from [this repository](https://github.com/florin
 - [x] [CSV to JSON](src/Easy/CSV2JSON/)
 - [x] [Dollars to Tenge](src/Easy/Dollars2Tenge/)
 - [x] [Dynamic CSS Variables](src/Easy/DynamicCSSVariables/)
-- [ ] [TODO list (First DB)](src/Easy/ToDo/)
+- [x] [TODO list (First DB)](src/Easy/ToDo/)
+- [ ] [Message List](src/Intermediate/MessageList)
 
 ## Installation
 
@@ -74,6 +75,19 @@ In case it's WEB, download the whole project folder and open index.html in your 
         </td>
         <td>
             <ul>
+                <li>Web Browser</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <ul>
+                <li>ToDo</li>
+            </ul>
+        </td>
+        <td>
+            <ul>
+                <li>npm</li>
                 <li>Web Browser</li>
             </ul>
         </td>
